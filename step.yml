@@ -1,8 +1,8 @@
 title: Set iOS Info.plist - Bundle Identifier
 summary: |-
-  Sets the Bundle Identifier to the specified value, in the target Info.plist file for the next build.
+  Sets the Bundle Name & Identifier to the specified value, in the target Info.plist file for the next build.
 description: |-
-  Sets the Bundle Identifier to the specified value, in the target Info.plist file for the next build.
+  Sets the Bundle Name & Identifier to the specified value, in the target Info.plist file for the next build.
 website: https://github.com/teference/steps-set-ios-bundle-identifier
 source_code_url: https://github.com/teference/steps-set-ios-bundle-identifier
 support_url: https://github.com/teference/steps-set-ios-bundle-identifier/issues
@@ -34,4 +34,18 @@ inputs:
       summary: "Set the :CFBundleIdentifier to a specified value. Should be string."
       description: |
         Bundle Identifier e.g.: com.yourcompany.$(PRODUCT_NAME:rfc1034identifier) Read more: https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html
+      is_required: true
+  - bundle_name:
+    opts:
+      title: "Bundle Short Name to set"
+      summary: "Set the :CFBundleName to a specified value. Should be string (16 characters max)."
+      description: |
+        Bundle CFBundleName e.g.: My App    Read more: https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-109585
+      is_required: true
+  - bundle_display_name:
+    opts:
+      title: "Bundle Display Name to set (visible to users and used by Siri)"
+      summary: "Set the :CFBundleDisplayName to a specified value. Should be string."
+      description: |
+        Bundle CFBundleDisplayName e.g.: My App    Read more: https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-110725
       is_required: true
