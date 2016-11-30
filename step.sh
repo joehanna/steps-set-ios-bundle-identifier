@@ -29,6 +29,7 @@ if [ -z "${bundle_display_name}" ] ; then
   exit 1
 fi
 
+<<<<<<< HEAD
 if [ -z "${app_icon_asset_catalog}" ] ; then
   echo " No App Icon Asset Catalog specified - existing value retained."
 fi
@@ -43,6 +44,15 @@ echo " (i) Provided Bundle Identifier       : ${bundle_identifier}"
 echo " (i) Provided Bundle Name (short)     : ${bundle_name}"
 echo " (i) Provided Bundle Display Name     : ${bundle_display_name}"
 echo -n " (i) Provided App Icon Asset Catalog  : "; if [ -z "${app_icon_asset_catalog}" ]; then echo Not specified; else echo ${app_icon_asset_catalog}; fi
+=======
+# ---------------------
+# --- Configs:
+
+echo " (i) Provided Info.plist file path : ${info_plist_file}"
+echo " (i) Provided Bundle Identifier    : ${bundle_identifier}"
+echo " (i) Provided Bundle Name (short)  : ${bundle_name}"
+echo " (i) Provided Bundle Display Name  : ${bundle_display_name}"
+>>>>>>> 96caf111d351be7c9c5917325388aa68c1597e80
 
 # ---------------------
 # --- Main:
