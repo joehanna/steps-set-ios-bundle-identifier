@@ -22,7 +22,7 @@ Version 1.0.2
 * Fixed Info.plist file path input to allow space in file path.
 
 Version 1.1.0
-* Added setting of BundleName and BundleDisplayName
+* Added setting of BundleName, BundleDisplayName and path to App Icon Asset Catalog
 
 ### Credits
 

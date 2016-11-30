@@ -29,13 +29,20 @@ if [ -z "${bundle_display_name}" ] ; then
   exit 1
 fi
 
+if [ -z "${app_icon_asset_catalog}" ] ; then
+  echo " No App Icon Asset Catalog specified - existing value retained."
+fi
+
+
+
 # ---------------------
 # --- Configs:
 
-echo " (i) Provided Info.plist file path : ${info_plist_file}"
-echo " (i) Provided Bundle Identifier    : ${bundle_identifier}"
-echo " (i) Provided Bundle Name (short)  : ${bundle_name}"
-echo " (i) Provided Bundle Display Name  : ${bundle_display_name}"
+echo " (i) Provided Info.plist file path    : ${info_plist_file}"
+echo " (i) Provided Bundle Identifier       : ${bundle_identifier}"
+echo " (i) Provided Bundle Name (short)     : ${bundle_name}"
+echo " (i) Provided Bundle Display Name     : ${bundle_display_name}"
+echo -n " (i) Provided App Icon Asset Catalog  : "; if [ -z "${app_icon_asset_catalog}" ]; then echo Not specified; else echo ${app_icon_asset_catalog}; fi
 
 # ---------------------
 # --- Main:
@@ -90,3 +97,18 @@ echo " (i) Replaced Bundle Display Name: $REPLACED_BUNDLE_DISPLAY_NAME"
 
 # ==> Bundler Display Name patched in Info.plist file for iOS project
 
+
+# ---- Set Info.plist App Icon Asset Catalog path:
+echo ""
+echo ""
+echo " (i) Replacing App Icon Asset Catalog..."
+
+ORIGINAL_APP_ICON_ASSET_CATALOG="$(/usr/libexec/PlistBuddy -c "Print :XSAppIconAssets" "${info_plist_file}")"
+echo " (i) Original App Icon Asset Catalog: $ORIGINAL_APP_ICON_ASSET_CATALOG"
+
+/usr/libexec/PlistBuddy -c "Set :XSAppIconAssets ${app_icon_asset_catalog}" "${info_plist_file}"
+
+REPLACED_APP_ICON_ASSET_CATALOG="$(/usr/libexec/PlistBuddy -c "Print :XSAppIconAssets" "${info_plist_file}")"
+echo " (i) Replaced App Icon Asset Catalog: $REPLACED_APP_ICON_ASSET_CATALOG"
+
+# ==> App Icon Asset Catalog path patched in Info.plist file for iOS project

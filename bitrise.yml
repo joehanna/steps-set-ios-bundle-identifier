@@ -5,6 +5,10 @@ app:
   envs:
   - info_plist_file: "Info.plist"
   - bundle_identifier: "com.teferene.mybundleidentifier"
+  - bundle_name: "My App"
+  - bundle_display_name: "My App"
+  - app_icon_asset_catalog: "Resources/Images.xcassets/AppIcons-FreeEdition.appiconset"
+  
 
 workflows:
   test:
@@ -25,6 +29,9 @@ workflows:
         inputs:
         - info_plist_file: "Info.plist"
         - bundle_identifier: "com.teference.mybundleidentifier"
+        - bundle_name: "My App"
+        - bundle_display_name: "My App"
+        - app_icon_asset_catalog: "Resources/Images.xcassets/AppIcons-FreeEdition.appiconset"
 
   # ----------------------------------------------------------------
   # --- workflows to Share this step into a Step Library

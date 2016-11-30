@@ -49,3 +49,10 @@ inputs:
       description: |
         Bundle CFBundleDisplayName e.g.: My App    Read more: https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-110725
       is_required: true
+  - app_icon_asset_catalog:
+    opts:
+      title: "Path to App Icon Asset Catalog"
+      summary: "Set the :XSAppIconAssets to a specified value. Should be string."
+      description: |
+        Asset Catalog path e.g.: Resources/Images.xcassets/AppIcons-FreeEdition.appiconset    Read more: https://developer.apple.com/library/prerelease/content/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/AssetTypes.html#//apple_ref/doc/uid/TP40015170-CH30-SW1
+      is_required: false
